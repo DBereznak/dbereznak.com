@@ -1,5 +1,5 @@
 <script lang="ts">
-    let name = "DBereznak.com";
+    let name = "DBereznak.dev";
 </script>
 
 <h1>Welcome to {name}</h1>
