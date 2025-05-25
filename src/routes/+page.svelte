@@ -1,6 +1,8 @@
 <script lang="ts">
+    import "../lib/global.css";
+    import Footer from "$lib/components/Footer/Footer.svelte";
     let name = "DBereznak.dev";
 </script>
 
 <h1>Welcome to {name}</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<Footer />
