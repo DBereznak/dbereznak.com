@@ -2,8 +2,18 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
-    padding: 10px;
     background-color: #363844;
     color: #f1f1f1;
+}
+
+.column {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    & .copyright {
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    }
 }
