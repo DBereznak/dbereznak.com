@@ -13,7 +13,15 @@ footer {
 
     & .copyright {
         display: flex;
-  justify-content: center;
-  align-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & p {
+        display: flex;
+        font-size: 24px;
+        .text-adjust {
+            padding: 5px 10px;
+        }
     }
 }

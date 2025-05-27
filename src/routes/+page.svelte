@@ -1,8 +1,9 @@
 <script lang="ts">
     import "../lib/global.css";
     import Footer from "$lib/components/Footer/Footer.svelte";
-    let name = "DBereznak.dev";
+    import Header from "$lib/components/Header/Header.svelte";
+  import Contact from "$lib/components/Contact/Contact.svelte";
 </script>
-
-<h1>Welcome to {name}</h1>
+<Header />
+<Contact />
 <Footer />
