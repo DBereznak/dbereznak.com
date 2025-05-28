@@ -25,3 +25,18 @@ footer {
         }
     }
 }
+
+@media (max-width: 600px) {
+    footer {
+        position: relative;
+    }
+
+    .column {
+        flex-direction: column;
+        align-items: center;
+
+        & p {
+            font-size: 18px;
+        }
+    }
+}
