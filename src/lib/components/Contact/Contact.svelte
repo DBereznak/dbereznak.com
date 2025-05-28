@@ -5,16 +5,29 @@
     let email = $state("");
     let message = $state("");
     let formActive = $state(false);
+    let submitted = $state(false);
 
       async function onSubmit() {
         console.log("Testing form submission");
-        await fetch(`http://localhost:3000/send?name=${name}&email=${email}&message=${message}`, {
+        await fetch(`https://small-email-api.vercel.app/api/send?name=${name}&email=${email}&message=${message}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             }
-        })
+        }).then(response => {
+            if (response.ok) {
+                submitted = true;
+                name = "";
+                email = "";
+                message = "";
+            } else {
+                alert("Failed to send message. Please try again later.");
+            }
+        }).catch(error => {
+            console.error("Error sending message:", error);
+            alert("An error occurred while sending your message. Please try again later.");
+        });
   }
 
     $effect(() => {
@@ -49,6 +62,10 @@
         </label>
         <br />
         <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}">Send</button>
+
+        {#if submitted}
+            <p class="success-message">Thank you for your message!</p>
+        {/if}
             <div class="contact-info">
         <ul>
             <li>
