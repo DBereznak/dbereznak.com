@@ -1,7 +1,45 @@
 <script>
     import "./Contact.css";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
-    // Add your component logic here
+      const FORMSPARK_ACTION_URL = "https://submit-form.com/dxlgG2fe";
+    let name = $state("");
+    let email = $state("");
+    let message = $state("");
+    let submitting = $state(false);
+    let formActive = $state(false);
+
+
+      async function onSubmit() {
+    try {
+      submitting = true;
+      await fetch(FORMSPARK_ACTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,  
+          message,
+        }),
+      });
+      name = "";
+      email = "";
+      message = "";
+      alert("Form submitted");
+    } finally {
+      submitting = false;
+    }
+  }
+
+    $effect(() => {
+    if(email.length < 6 || name.length < 2 || message.length < 10) {
+        formActive = false;
+    } else {
+        formActive = true;  
+    }  
+    });
 </script>
 
 <div class="contact-container">
@@ -10,23 +48,23 @@
             If you have any questions or would like to discuss a project, feel free to reach out to me via the form below.
             I look forward to hearing from you!
         </p>
-    <form class="contact-form" action="https://submit-form.com/bQs6htcOt" data-botpoison-public-key="pk_899617a3-616f-4968-95cd-00899458f65d">
+    <form class="contact-form" onsubmit="{onSubmit}">
         <label>
             Name <br/>
-            <input type="text" name="userName" />
+            <input type="text" name="name" bind:value={name} />
         </label>
         <br />
         <label>
             Email <br/>
-            <input type="email" name="userEmail" />
+            <input type="email" name="email" bind:value={email} />
         </label>
         <br />
         <label>
             Message <br/>
-            <textarea name="message"></textarea>
+            <textarea name="message" bind:value={message}></textarea>
         </label>
         <br />
-        <button type="submit">Send</button>
+        <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}">Send</button>
             <div class="contact-info">
         <ul>
             <li>
