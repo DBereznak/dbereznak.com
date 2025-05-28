@@ -1,30 +1,29 @@
 <script>
     import "./Contact.css";
     import { Resend} from "resend";
+    import sendMail from "./sendMail.js";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
     let email = $state("");
     let message = $state("");
     let formActive = $state(false);
 
-    const resend = new Resend("re_hiLM9AqV_8JQaFN5XPcW7Jgc1rMbv7gJ8");
-
       async function onSubmit() {
-    try {
-        resend.emails.send({
-            from: "dbereznak.dev",
-            to: email,
-            subject: `New message from ${name}`,
-            text: message,
-        });
-      name = "";
-      email = "";
-      message = "";
-      alert("Form submitted");
-    } catch (error) {
-        console.error("Error sending email:", error);
-        alert("There was an error submitting the form. Please try again later.");
-    }
+        sendMail({ name, email, message});
+    // try {
+    //     resend.emails.send({
+    //         from: "dbereznak.dev",
+    //         to: email,
+    //         subject: `New message from ${name}`,
+    //         text: message,
+    //     });
+    //   name = "";
+    //   email = "";
+    //   message = "";
+    // } catch (error) {
+    //     console.error("Error sending email:", error);
+    //     alert("There was an error submitting the form. Please try again later.");
+    // }
   }
 
     $effect(() => {
