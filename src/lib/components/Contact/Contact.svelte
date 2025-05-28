@@ -1,7 +1,5 @@
 <script>
     import "./Contact.css";
-    import { Resend} from "resend";
-    import sendMail from "./sendMail.js";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
     let email = $state("");
@@ -9,21 +7,14 @@
     let formActive = $state(false);
 
       async function onSubmit() {
-        sendMail({ name, email, message});
-    // try {
-    //     resend.emails.send({
-    //         from: "dbereznak.dev",
-    //         to: email,
-    //         subject: `New message from ${name}`,
-    //         text: message,
-    //     });
-    //   name = "";
-    //   email = "";
-    //   message = "";
-    // } catch (error) {
-    //     console.error("Error sending email:", error);
-    //     alert("There was an error submitting the form. Please try again later.");
-    // }
+        console.log("Testing form submission");
+        await fetch(`http://localhost:3000/send?name=${name}&email=${email}&message=${message}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
   }
 
     $effect(() => {
