@@ -1,35 +1,29 @@
 <script>
     import "./Contact.css";
+    import { Resend} from "resend";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
-      const FORMSPARK_ACTION_URL = "https://submit-form.com/dxlgG2fe";
     let name = $state("");
     let email = $state("");
     let message = $state("");
-    let submitting = $state(false);
     let formActive = $state(false);
 
+    const resend = new Resend("re_hiLM9AqV_8JQaFN5XPcW7Jgc1rMbv7gJ8");
 
       async function onSubmit() {
     try {
-      submitting = true;
-      await fetch(FORMSPARK_ACTION_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,  
-          message,
-        }),
-      });
+        resend.emails.send({
+            from: "dbereznak.dev",
+            to: email,
+            subject: `New message from ${name}`,
+            text: message,
+        });
       name = "";
       email = "";
       message = "";
       alert("Form submitted");
-    } finally {
-      submitting = false;
+    } catch (error) {
+        console.error("Error sending email:", error);
+        alert("There was an error submitting the form. Please try again later.");
     }
   }
 
