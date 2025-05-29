@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import "./Contact.css";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
@@ -6,6 +6,11 @@
     let message = $state("");
     let formActive = $state(false);
     let submitted = $state(false);
+
+    function isValidEmail(email: string) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
       async function onSubmit() {
         console.log("Testing form submission");
@@ -31,7 +36,7 @@
   }
 
     $effect(() => {
-    if(email.length < 6 || name.length < 2 || message.length < 10) {
+    if(!isValidEmail(email) || name.length < 2 || message.length < 10) {
         formActive = false;
     } else {
         formActive = true;  
