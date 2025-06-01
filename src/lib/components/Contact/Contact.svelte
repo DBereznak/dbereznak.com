@@ -1,5 +1,7 @@
 <script lang="ts">
     import "./Contact.css";
+    import { replaceState, goto } from "$app/navigation";
+    import { page } from "$app/state";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
     let email = $state("");
@@ -13,7 +15,6 @@
 }
 
       async function onSubmit() {
-        console.log("Testing form submission");
         await fetch(`https://small-email-api.vercel.app/api/send?name=${name}&email=${email}&message=${message}`, {
             method: "GET",
             headers: {
@@ -26,6 +27,7 @@
                 name = "";
                 email = "";
                 message = "";
+                console.log(page)
             } else {
                 alert("Failed to send message. Please try again later.");
             }
@@ -41,6 +43,13 @@
     } else {
         formActive = true;  
     }  
+
+    if(submitted) {
+        setTimeout(() => {
+            goto("/");
+            submitted = false;
+        }, 3000);
+    }
     });
 </script>
 
@@ -50,7 +59,7 @@
             If you have any questions or would like to discuss a project, feel free to reach out to me via the form below.
             I look forward to hearing from you!
         </p>
-    <form class="contact-form" onsubmit="{onSubmit}">
+    <form class="contact-form">
         <label>
             Name <br/>
             <input type="text" name="name" bind:value={name} />
@@ -66,7 +75,7 @@
             <textarea name="message" bind:value={message}></textarea>
         </label>
         <br />
-        <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}">Send</button>
+        <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}" onclick={onSubmit}>Send</button>
 
         {#if submitted}
             <p class="success-message">Thank you for your message!</p>
