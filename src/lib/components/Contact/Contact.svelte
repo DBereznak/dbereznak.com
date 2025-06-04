@@ -1,6 +1,6 @@
 <script lang="ts">
     import "./Contact.css";
-    import { replaceState, goto } from "$app/navigation";
+    import { goto } from "$app/navigation";
     import { page } from "$app/state";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
@@ -27,7 +27,6 @@
                 name = "";
                 email = "";
                 message = "";
-                console.log(page)
             } else {
                 alert("Failed to send message. Please try again later.");
             }
