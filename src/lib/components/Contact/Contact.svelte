@@ -1,7 +1,6 @@
 <script lang="ts">
     import "./Contact.css";
     import { goto } from "$app/navigation";
-    import { page } from "$app/state";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
     let name = $state("");
     let email = $state("");
