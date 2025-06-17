@@ -51,7 +51,7 @@
     });
 </script>
 
-<div class="contact-container">
+<div class="contact-container" id="contact">
     <h2>Contact me if you need a website or web application</h2>
             <p>
             If you have any questions or would like to discuss a project, feel free to reach out to me via the form below.
