@@ -22,7 +22,7 @@ let activeProject = $derived(Projects.find(({id}) => id === selectedProject));
         <div class="project-details">
             <h1><a href={activeProject?.link} target="_blank">{activeProject?.name}</a></h1>
             <p>{activeProject?.description}</p>
-            <img alt={activeProject?.name} src={`../../../src/lib/images/${activeProject?.thumbnail}`} />
+            <img alt={activeProject?.name} src={activeProject?.thumbnail} />
             {#if activeProject?.github}
             <a href={activeProject?.github} target="_blank">
                 <Github />
