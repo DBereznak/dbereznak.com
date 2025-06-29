@@ -4,7 +4,7 @@ footer {
     color: #f1f1f1;
 
     h1 {
-    font-size: calc(9.99vw + 1vh + 2vmin);
+    font-size: calc(9.5vw + 1vh + 2vmin);
     white-space: nowrap;
     margin: 0;
     & span {
@@ -26,7 +26,6 @@ footer {
 }
 
 .column {
-    padding: 10px;
     display: flex;
     justify-content: space-between;
 
@@ -45,10 +44,10 @@ footer {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     footer {
     h1 {
-    font-size: calc(9.5vw + 1vh + 2vmin);
+    font-size: calc(8.5vw + 1vh + 2vmin);
     white-space: wrap;
     }
 }
