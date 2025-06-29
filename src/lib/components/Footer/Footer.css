@@ -1,7 +1,28 @@
 footer {
-    width: 100%;
-    background-color: #363844;
+    padding: 64px;
+    background-color: var(--black);
     color: #f1f1f1;
+
+    h1 {
+    font-size: calc(9.99vw + 1vh + 2vmin);
+    white-space: nowrap;
+    margin: 0;
+    & span {
+        color: var(--red);
+    }
+    }
+
+
+    a {
+        color: #fff;
+        font-size: 24px;
+        &:hover {
+            color: var(--red)
+        }
+    }
+    & hr {
+        opacity: 0.15;
+    }
 }
 
 .column {
@@ -24,7 +45,15 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
+    footer {
+    h1 {
+    font-size: calc(9.5vw + 1vh + 2vmin);
+    white-space: wrap;
+    }
+}
+
+@media (max-width: 800px) {
     footer {
         position: relative;
     }
