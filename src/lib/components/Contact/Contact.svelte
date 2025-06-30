@@ -2,6 +2,7 @@
     import "./Contact.css";
     import { goto } from "$app/navigation";
     import { Linkedin, Mail, Github } from '@lucide/svelte';
+    import astrick from "./astrick.svg";
     let name = $state("");
     let email = $state("");
     let message = $state("");
@@ -52,34 +53,13 @@
 </script>
 
 <div class="contact-container" id="contact">
-    <h2>Contact me if you need a website or web application</h2>
+    <div class="contact-header">
+        <div class="connect">
+    <h2>Lets Connect</h2>
             <p>
-            If you have any questions or would like to discuss a project, feel free to reach out to me via the form below.
-            I look forward to hearing from you!
+Let's create something amazing together! Reach out I'd love to hear about your project and ideas
         </p>
-    <form class="contact-form">
-        <label>
-            Name <br/>
-            <input type="text" name="name" bind:value={name} />
-        </label>
-        <br />
-        <label>
-            Email <br/>
-            <input type="email" name="email" bind:value={email} />
-        </label>
-        <br />
-        <label>
-            Message <br/>
-            <textarea name="message" bind:value={message}></textarea>
-        </label>
-        <br />
-        <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}" onclick={onSubmit}>Send</button>
-
-        {#if submitted}
-            <p class="success-message">Thank you for your message!</p>
-        {/if}
-            <div class="contact-info">
-        <ul>
+                <ul>
             <li>
                <a href="mailto:dbereznak@gmail.com"><Mail /></a>
             </li>
@@ -90,6 +70,29 @@
                 <a href="https://github.com/DBereznak/dbereznak.com" ><Github /></a>
             </li>
         </ul>
+        </div>
+        <img src={astrick} alt="astrick" class="astrick" />
+        </div>
+
+    <form class="contact-form">
+        <label>
+            <input type="text" name="name" placeholder="name" bind:value={name} />
+        </label>
+        <br />
+        <label>
+            <input type="email" name="email" placeholder="email" bind:value={email} />
+        </label>
+        <br />
+        <label>
+            <textarea name="message" placeholder="message" bind:value={message}></textarea>
+        </label>
+        <br />
+        <button type="submit" class="{formActive ? "" : "disabled"}" disabled="{!formActive}" onclick={onSubmit}>Submit Now</button>
+
+        {#if submitted}
+            <p class="success-message">Thank you for your message!</p>
+        {/if}
+            <div class="contact-info">
         </div>
     </form>
 
