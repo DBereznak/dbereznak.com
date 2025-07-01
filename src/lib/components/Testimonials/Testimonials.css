@@ -1,6 +1,20 @@
 .testimonials {
+  background-color: var(--gray);
   display: flex;
+  flex-direction: column;
   justify-content:flex-start;
-  align-items: center;
   padding: 50px;
+  h1{
+    color: var(--black);
+    font-size: 70px;
+    display: block;
+    margin-top: 0;
+  }
+  .testimonial-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }

@@ -6,6 +6,8 @@
 
 <div class="card">
     {@html text}
-    <h3> { name }</h3>
-    <h4> { role }</h4>
+    <div class="bottom">
+        <h3> { name }</h3>
+        <h4> { role }</h4>
+    </div>
 </div>

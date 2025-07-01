@@ -1,0 +1,16 @@
+.pill-box {
+    position: absolute;
+    bottom: 50px;
+}
+
+.pill-list{
+    display: inline;
+    li {
+        border: 1px solid var(--dark-gray);
+        border-radius: 16px;
+        padding: 5px;
+        background-color: var(--gray);
+        color: var(--dark-gray);
+        margin: 10px 10px 0 0;
+    }
+}
