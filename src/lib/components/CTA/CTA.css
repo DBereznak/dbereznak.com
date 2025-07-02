@@ -77,19 +77,36 @@
         }
     }
 }
+}
 
 @media (max-width: 800px) {
-    footer {
-        position: relative;
+    .cta{
+        height: 600px;
+ .img-container{
+    width: 85%;
     }
 
-    .column {
-        flex-direction: column;
-        align-items: center;
-
-        & p {
-            font-size: 18px;
+    h1 {
+        font-size: 28px;
+        padding: 20px;
+        width: 82%;
+        top: 150px;
+        }
+}
+}
+@media (max-width: 600px) {
+    .cta {
+        h1 {
+            font-size: 32px;
+            padding: 10px;
+            width: 90%;
+            top: 100px;
+        }
+        .img-container {
+            width: 100%;
+            img {
+                max-height: 400px;
+            }
         }
     }
-}
 }
