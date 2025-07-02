@@ -13,6 +13,8 @@
     <div class="header">
         <button onclick={scrollToContact}>Let's connect</button>
     </div>
-        <h1>Hi, I'm Donny,  a Web Developer<span>.</span> <br/> Let's make something amazing together<span>.</span></h1>
+    <div class="img-container">
         <img src={me} alt="me" />
+    </div>
+            <h1>Hi, I'm Donny,  a Web Developer<span>.</span> <br/> Let's make something amazing together<span>.</span></h1>
 </section>
