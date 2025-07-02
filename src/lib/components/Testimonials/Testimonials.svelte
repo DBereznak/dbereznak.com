@@ -4,6 +4,7 @@
  import Card from "$lib/components/Card/Card.svelte";
  let randomTestimonial = []
  const iArray = Array.from({ length: testimonials.length }, (_, i) => i);
+ console.log(iArray);
     for (let i = 0; i < 3; i++) {
         let randomNumber = Math.floor(Math.random() * iArray.length);
         randomTestimonial.push(testimonials[iArray[randomNumber]]);
