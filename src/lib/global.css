@@ -11,5 +11,6 @@ body {
     padding: 0;
     background-color: var(--white);
     font-family: "Inter", sans-serif;
+    cursor: url('https://res.cloudinary.com/album/image/upload/v1751418301/dbereznak.com/custom_cursor.svg'), auto;
 }
 

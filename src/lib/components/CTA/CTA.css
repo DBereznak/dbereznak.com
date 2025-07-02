@@ -19,6 +19,7 @@
                 transition: color 0.3s ease;
                 font-weight: bold;
                 &:hover {
+                    cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
                     border-bottom: 1px solid var(--red);
                 }
             }   

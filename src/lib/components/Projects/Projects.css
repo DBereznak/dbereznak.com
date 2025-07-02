@@ -37,7 +37,7 @@
             line-height: 1.15;
     }
     &:hover {
-        cursor: pointer;
+        cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
         color: var(--red);
     }
     }
@@ -75,6 +75,7 @@
                 color: var(--red);
                 text-decoration: none;
                 &:hover {
+                    cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
                     text-decoration: underline;
                 }
             }

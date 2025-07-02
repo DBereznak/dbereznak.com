@@ -17,6 +17,7 @@ footer {
         color: #fff;
         font-size: 24px;
         &:hover {
+            cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
             color: var(--red)
         }
     }
