@@ -1,37 +1,37 @@
-.card{
-    position: relative;
-    width: 30%;
-    max-width: 500px;
-    aspect-ratio: 1 / 0.5;
-    padding: 25px;
-    border-radius: 16px;
-    background-color: var(--white);
+.card {
+  position: relative;
+  width: 30%;
+  max-width: 500px;
+  aspect-ratio: 1 / 0.5;
+  padding: 25px;
+  border-radius: 16px;
+  background-color: var(--white);
 
-    p {
-        color: var(--dark-gray);
-    }
-    .bottom {
-        display: block;
-        position: absolute;
-        bottom: 25px;
-    }
-& h3 {
+  p {
+    color: var(--dark-gray);
+  }
+  .bottom {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+  }
+  & h3 {
     font-weight: bold;
     margin: 0;
     padding-bottom: 7px;
     color: var(--red);
-}
-& h4 {
+  }
+  & h4 {
     font-weight: normal;
     margin: 0;
     padding: 0;
     font-size: 14px;
-}
+  }
 }
 
 @media (max-width: 600px) {
-    .card {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-    }
+  .card {
+    width: 100%;
+    aspect-ratio: 1 / 0.5;
+  }
 }

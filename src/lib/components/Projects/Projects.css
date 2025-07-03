@@ -1,88 +1,119 @@
 .projects {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 50px 0;
-    margin: 0px auto;
-    background-color: var(--gray);
-    .panel {
-        position: relative;
-        padding: 50px;
-        overflow: hidden;
-        h1 {
-            font-size: 70px;
-            margin-top: 0;
-            color: var(--red);
-        }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 0;
+  margin: 0px auto;
+  background-color: var(--gray);
+  .panel {
+    position: relative;
+    padding: 50px;
+    overflow: hidden;
+    h1 {
+      font-size: 70px;
+      margin-top: 0;
+      color: var(--red);
     }
+  }
 
-    ul {
+  ul {
     display: flex;
     position: relative;
     justify-content: flex-start;
     list-style: none;
     padding: 0;
     margin-bottom: 25px;
-    top: 1px
-    }
+    top: 1px;
+  }
 
-    button {
-        color: var(--dark-gray);
-        border: none;
-        border-bottom: 2px solid var(--gray);
-        background: none;
-     &.selected{
-            color: var(--red);
-            border-bottom: 2px solid var(--red);
-            line-height: 1.15;
+  button {
+    color: var(--dark-gray);
+    border: none;
+    border-bottom: 2px solid var(--gray);
+    background: none;
+    &.selected {
+      color: var(--red);
+      border-bottom: 2px solid var(--red);
+      line-height: 1.15;
     }
     &:hover {
-        cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
+      cursor:
+        url("https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg"),
+        auto;
+      color: var(--red);
+    }
+  }
+
+  .project-details {
+    display: flex;
+    justify-content: space-between;
+    & .left {
+      width: 48%;
+      margin-right: 25px;
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        overflow: hidden;
+      }
+    }
+
+    & .right {
+      width: 48%;
+      margin-left: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: left;
+      text-align: left;
+      padding: 0 25px;
+      border-radius: 16px;
+      background-color: var(--white);
+      p {
+        color: var(--dark-gray);
+      }
+      a {
         color: var(--red);
+        text-decoration: none;
+        &:hover {
+          cursor:
+            url("https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg"),
+            auto;
+          text-decoration: underline;
+        }
+      }
     }
+    h3 {
+      color: var(--red);
     }
+  }
+}
 
+@media (max-width: 1300px) {
+  .projects {
     .project-details {
-        display: flex;
-        justify-content: space-between;
-        & .left {
-            width: 48%;
-            margin-right: 25px;
-            img {
-                width: 100%;
-                height: auto;
-                max-height: 600px;
-                overflow: hidden;
-
-            }
+      flex-direction: column;
+      & .left,
+      & .right {
+        margin: 0;
+      }
+      & .right {
+        width: 95%;
+        height: 300px;
+        p {
+          max-width: 75%;
         }
-
-        & .right {
-            width: 48%;
-            margin-left: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-            align-items: left;
-            text-align: left;
-            padding: 0 25px;
-            border-radius: 16px;
-            background-color: var(--white);
-            p{
-                color: var(--dark-gray);
-            }
-            a{
-                color: var(--red);
-                text-decoration: none;
-                &:hover {
-                    cursor: url('https://res.cloudinary.com/album/image/upload/v1751418639/dbereznak.com/hover_cursor.svg'), auto;
-                    text-decoration: underline;
-                }
-            }
-        }
-        h3{
-            color: var(--red);
-        }
-
+      }
+      & .left {
+        width: 100%;
+        margin-bottom: 25px;
+      }
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .projects {
+    display: none;
+  }
 }
