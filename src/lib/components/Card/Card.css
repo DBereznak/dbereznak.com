@@ -28,3 +28,10 @@
     font-size: 14px;
 }
 }
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}

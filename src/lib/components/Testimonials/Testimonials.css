@@ -18,3 +18,15 @@
     gap: 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .testimonials {
+    h1 {
+      font-size: 36px;
+      text-align: center;
+    }
+    padding: 20px;
+  }
+}
+
+

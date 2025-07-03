@@ -3,6 +3,7 @@
   display: block;
   margin: 96px 64px;
   & .contact-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-bottom: 48px;
@@ -43,7 +44,7 @@
   }
   }
   & .contact-form{
-    color: var(--blac);
+    color: var(--black);
     font-size: 18px;
     label{
         margin-bottom: 3px;
@@ -89,3 +90,24 @@
     }
 }
 }
+
+@media (max-width: 600px) {
+    .contact-container {
+        margin: 40px 15px;
+          & .contact-form{
+            input, textarea {
+                width: 88%;
+            }
+            button {
+                width: 380px;
+            }
+
+          }
+        .astrick {
+            position: absolute;
+            top: -20px;
+            right: 0;
+        }
+    }
+}
+
