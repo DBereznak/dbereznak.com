@@ -43,12 +43,13 @@ const skillList = [
     name: "Python",
     icon: "devicon-python-plain colored",
     description:
-      "Skilled in CSS3 for styling web applications, including Flexbox and Grid.",
+      "Professional at crafting elegant, high-performance solutions across web, data, and automation with clean, readable code.",
   },
   {
     name: "Flask",
     icon: "devicon-flask-original colored",
-    description: "Experienced with Git for version control and collaboration.",
+    description:
+      "Skilled in integrating efficient, scalable backends into modern front-end stacks with clean API architecture.",
   },
 ];
 

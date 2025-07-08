@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import "./Skills.css";
     import skillList from "./skillList";
     import { ChevronRight, ChevronLeft } from '@lucide/svelte';
@@ -44,7 +43,7 @@
 
 <section class="skills">
     <h2>Skills</h2>
-    <button class="left {move >= 1200 ? 'disabled' : ''}" onclick={moveRight} disabled={move === 1600 ? true : false}><ChevronLeft ></ChevronLeft></button>
+    <button class="left {move >= 1500 ? 'disabled' : ''}" onclick={moveRight} disabled={move >= 1500 ? true : false}><ChevronLeft ></ChevronLeft></button>
     <div class="skills-container">
 
         <ul class="skills-list" style={moveStyle}>
@@ -56,6 +55,7 @@
                 </li>
             {/each}
         </ul>
+        <div class="gradient"></div>
     </div>
             <button class="right {move === 0 ? 'disabled' : ''}" onclick={moveLeft} disabled={move === 0 ? true : false}><ChevronRight/></button>
 </section>
