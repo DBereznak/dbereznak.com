@@ -20,7 +20,8 @@ const skillList = [
   {
     name: "Svelte",
     icon: "devicon-svelte-plain colored",
-    description: "Experienced with Git for version control and collaboration.",
+    description:
+      "Versed in crafting performant, maintainable Svelte applications with refined UI precision, adaptive logic, and clean, modular code.",
   },
   {
     name: "Node.js",
