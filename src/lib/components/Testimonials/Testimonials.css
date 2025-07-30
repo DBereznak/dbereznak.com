@@ -19,6 +19,20 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .testimonials {
+    .testimonial-cards {
+      .card {
+        width: 100%;
+        max-width: fit-content;
+        aspect-ratio: 1/0.3;
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+}
+
 @media (max-width: 600px) {
   .testimonials {
     h1 {
