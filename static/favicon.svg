@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#ff462e"/>
+  
+  <!-- Code bracket symbols with more padding -->
+  <path d="M6 12l-2 4 2 4h2l-2-4 2-4h-2z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  <path d="M26 12l2 4-2 4h-2l2-4-2-4h2z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+  
+  <!-- DB initials in center -->
+  <text x="16" y="20" text-anchor="middle" font-family="Consolas, Monaco, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#ffffff">DB</text>
+  
+  <!-- Small dot for modern touch -->
+  <circle cx="16" cy="25" r="1.5" fill="#ff8a7a"/>
+</svg>
